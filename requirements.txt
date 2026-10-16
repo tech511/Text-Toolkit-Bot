@@ -3,3 +3,4 @@ tgcrypto
 python-dotenv
 qrcode[pil]
 gTTS
+Flask
