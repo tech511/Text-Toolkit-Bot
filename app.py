@@ -49,19 +49,22 @@ def run_bot():
     app.run()
 
 
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
 
-    bot_thread = threading.Thread(
-        target=run_bot,
+    # Run the HTTP health server in a background thread.
+    web_thread = threading.Thread(
+        target=lambda: web_app.run(
+            host="0.0.0.0",
+            port=port,
+            use_reloader=False
+        ),
         daemon=True
     )
-    bot_thread.start()
+    web_thread.start()
 
-    print(f"Starting health server on port {port}...")
+    # Keep Pyrogram on the main thread.
+    print("Starting Pyrogram bot...")
+    app.run()
 
-    web_app.run(
-        host="0.0.0.0",
-        port=port,
-        use_reloader=False
-    )
