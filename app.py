@@ -1,4 +1,3 @@
-
 import os
 import threading
 from flask import Flask
@@ -11,6 +10,7 @@ from handle.qrcode import register_qrcode
 from handle.tts import register_tts
 from handle.text import register_text
 from callback import register_callbacks
+from handle.links import register_links
 
 
 # Pyrogram bot
@@ -28,7 +28,7 @@ register_tts(app)
 register_callbacks(app)
 register_text(app)
 register_menu(app)
-
+register_links(app)
 
 # HTTP health-check server
 web_app = Flask(__name__)
