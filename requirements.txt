@@ -2,5 +2,5 @@ pyrogram
 tgcrypto
 python-dotenv
 qrcode[pil]
-gTTS
+edge-tts
 Flask
