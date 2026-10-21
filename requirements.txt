@@ -4,3 +4,4 @@ python-dotenv
 qrcode[pil]
 edge-tts
 Flask
+cloudinary>=1.40.0
