@@ -1,0 +1,9 @@
+pyrogram
+tgcrypto
+python-dotenv
+qrcode[pil]
+edge-tts
+aiohttp
+pymongo>=4.13
+Flask
+cloudinary>=1.40.0
